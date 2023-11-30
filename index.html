@@ -1,0 +1,129 @@
+<!DOCTYPE html><html><head>
+<title>盛大开幕</title><meta charset="utf-8" /><style type="text/css">
+  html,body{
+	    width:100%;
+      	height:100%;
+      	margin:0px;
+      	background-image:url("fdf.png");
+      	background-repeat:no-repeat;
+      	background-size:100%100%;
+      }
+	
+	  
+	
+	
+	
+	
+	
+    img{
+	     width:400px;
+       	 height:200px;
+       }
+       #view_box{
+	     width:1000px;
+       	 height:200px;
+       	
+       	 margin:50px auto;
+       	 
+       	 border-radius:25px;
+       	
+       	 overflow:hidden;
+       }
+       #inner{
+       	 position:relative;
+       	 left:0px;
+       	 
+	     width:6400px;
+       	 height:200px;
+       	
+       	 display:flex;
+       	 justify-content:space-between;
+       }
+       #div1,#div2{
+	     width:3200px;
+       	 height:200px;
+
+       	 display:flex;
+       	 justify-content:space-between;
+       }
+    </style><script type="text/javascript">var left = 0;//inner的左边距
+      var raf;//帧频
+      function init(){
+    	  document.getElementById("div2").innerHTML = document.getElementById("div1").innerHTML;
+    	  
+    	  //鼠标进入view_box，停止移动
+    	  document.getElementById("view_box").onmouseover = function(){
+    		  //清除帧频
+    		  window.cancelAnimationFrame(raf);
+    	  }
+    	  
+    	  //鼠标离开view_box，继续移动
+    	  document.getElementById("view_box").onmouseout = function(){
+    		  moveImage();
+    	  }
+    	  
+    	  moveImage();
+      }
+      //移动inner
+      function moveImage(){
+    	  document.getElementById("inner").style.left = left+"px";
+    	  left-=2;
+    	  
+    	  //第一组图片移出显示区域，重置左边距
+    	  if(left <= -3200){
+    		  left = 0;
+    	  }
+    	  
+    	  //帧频：每秒60帧，每隔16.66毫秒执行一次
+    	  raf = window.requestAnimationFrame(moveImage);
+      }
+	  
+	
+	  
+	  
+	  
+    </script>
+	
+	
+	
+	
+	
+	
+	
+	</head>
+		
+	    
+	   
+
+	 
+	 
+	 
+	 <body onload="init()"><div id="view_box"><div id="inner"><div id="div1">
+	       <img src="IMG_2353.JPG" />
+	       <img src="IMG_2354.JPG" />
+	       <img src="IMG_2355.JPG" />
+	       <img src="IMG_2356.JPG" />
+	       <img src="IMG_2357.JPG" />
+	       <img src="IMG_2358.JPG" />
+	        <img src="IMG_2360.JPG" />
+	 	     <img src="IMG_2361.JPG" />
+	     </div><div id="div2"></div></div></div>
+	 	
+	 
+	 
+	   
+	   
+		</body></html>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
